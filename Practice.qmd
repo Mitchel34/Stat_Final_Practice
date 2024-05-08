@@ -1,0 +1,82 @@
+#Find the indicated Quantities
+
+
+#1. P(t3 >= -1)=?
+```{r}
+df <- 3  # degrees of freedom
+pt(q = -1, df = df, lower.tail = TRUE)
+
+#Answer: 0.1955011
+```
+
+#2. P(-a<=t10<=1) = 0.88 what is a = ?
+```{r}
+# Degrees of freedom
+df <- 10
+
+# Calculate 'a' for a two-tailed t-distribution with a central area of 0.88
+a <- qt(p = (1 - 0.88) / 2 + 0.88, df = df, lower.tail = TRUE)
+#Answer: a = 1.699841
+```
+
+#3 P(Z<= 11.75) = ?
+```{r}
+pnorm(q = 1.75)
+
+#Answer: 0.9599408
+```
+
+#4 P(-1.5 <= Z <= a) = 0.90 what is a?
+```{r}
+qnorm(p = (1 - 0.90) / 2 + 0.90)
+
+#Answer: 1.644854
+```
+
+#5 P(t3 <= a)  = 0.96 what is a?
+```{r}
+df <- 3
+
+# Calculate 'a' for the one-tailed t-distribution with a cumulative probability of 0.96
+a <- qt(p = 0.96, df = df, lower.tail = TRUE)
+a
+
+#Answer a = 2.605427
+```
+
+#6 P(X1^2 <= 1.96^2) = ?
+```{r}
+df <- 1
+
+# Calculate the probability for the chi-squared distribution
+pchisq(q = 1.96^2, df = df, lower.tail = TRUE)
+
+#Answer: 0.9500042
+```
+
+#7 P(a <=x4^2 <= b) = 0.95 what is a? what is b?
+```{r}
+df <- 4
+
+# Calculate 'a' and 'b' for the chi-squared distribution that bounds the central 95%
+a <- qchisq(p = (1 - 0.95) / 2, df = df, lower.tail = TRUE)
+b <- qchisq(p = (1 + 0.95) / 2, df = df, lower.tail = TRUE)
+a
+b
+#Answer: a = 0.4844186 b = 11.14329
+```
+
+#8 Supppose G represne the final grande randomly selected student recieves in ANT3765 ans it is known that G ~ N(88, 4). The instructor in ANT 3765 announces the bottom 10% will fail the course. Above what grade does the student need to score to pass ANT 3765? You are randomly inquiring about grades from your class mates and find out that the average for n = 16 students is 90. What is the probability P(Gbar >= 90)?
+```{r}
+# Parameters from the problem
+mu <- 88  # mean
+sigma <- 4  # standard deviation
+# Calculate the probability
+pnorm(q = 90, mean = mu, sd = sigma, lower.tail = FALSE)
+
+#Answer: .3085375
+```
+
+
+
+
